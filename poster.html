@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Poster Designs</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<script>
+const cards = document.querySelectorAll(".poster-card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = "running";
+    }
+  });
+}, { threshold: 0.1 });
+
+cards.forEach(card => {
+  card.style.animationPlayState = "paused";
+  observer.observe(card);
+});
+</script>
+<body>
+
+<header>
+  <h1>Poster Design Works</h1>
+  <p>Creative Posters for Business, Events & Promotions</p>
+</header>
+
+<section class="poster-gallery">
+
+    <div class="poster-card">
+    <img src="images/poster/alagesh.jpg">
+  </div>
+
+    <div class="poster-card">
+    <img src="images/poster/new1.jpg">
+  </div>
+
+  
+  
+  <div class="poster-card">
+    <img src="images/poster/family.png">
+  </div>
+
+  <div class="poster-card">
+    <img src="images/poster/family1.jpg">
+  </div>
+
+<div class="poster-card">
+    <img src="images/poster/jega al.jpg">
+  </div>
+
+  <div class="poster-card">
+    <img src="images/poster/mine.jpg">
+  </div>
+
+
+     <div class="poster-card">
+    <img src="images/poster/mapla og.jpg.jpeg">
+  </div>
+
+  <div class="poster-card">
+    <img src="images/poster/new prasa.jpg">
+  </div>
+
+     <div class="poster-card">
+    <img src="images/poster/usha akka.jpg.jpeg">
+  </div>
+
+</section>
+
+<div class="back">
+  <a href="index.html">⬅ Back to Home</a>
+</div>
+
+</body>
+</html>

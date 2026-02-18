@@ -1,0 +1,303 @@
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color:white;
+    overflow-x:hidden;
+}
+
+/* Header */
+header{
+  text-align:center;
+  padding:40px 20px;
+  animation: fadeDown 1s ease;
+}
+
+header h1{
+  font-size:2.5rem;
+  color:#38bdf8;
+  letter-spacing:3px;
+}
+
+header p{
+  color:#cbd5e1;
+}
+
+/* Gallery */
+.video-gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:25px;
+  padding:40px;
+}
+
+/* Cards */
+.video-card{
+  background:#020617;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  transform:translateY(40px);
+  opacity:0;
+  animation: cardShow 0.8s ease forwards;
+}
+
+.video-card:nth-child(1){animation-delay:0.2s;}
+.video-card:nth-child(2){animation-delay:0.4s;}
+.video-card:nth-child(3){animation-delay:0.6s;}
+.video-card:nth-child(4){animation-delay:0.8s;}
+
+.video-card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+.video-card:hover img{
+  transform:scale(1.1);
+}
+
+/* Social Section */
+.social{
+  text-align:center;
+  padding:40px 20px;
+}
+
+.social h2{
+  color:#38bdf8;
+  margin-bottom:20px;
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:12px 25px;
+  margin:10px;
+  border-radius:30px;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  transition:0.4s;
+}
+
+.insta{
+  background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);
+}
+
+.youtube{
+  background:#ff0000;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Back */
+.back{
+  text-align:center;
+  padding:20px;
+}
+
+.back a{
+  color:#38bdf8;
+  text-decoration:none;
+}
+
+/* Animations */
+@keyframes fadeDown{
+  from{opacity:0; transform:translateY(-30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes cardShow{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+.social{
+  text-align:center;
+  padding:40px 20px;
+}
+
+.social h2{
+  color:#38bdf8;
+  margin-bottom:25px;
+}
+
+.social-icons{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+}
+
+/* Logo style */
+.social-logo{
+  width:70px;
+  height:70px;
+  transition:0.4s;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+.social-logo:hover{
+  transform:scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 20px #38bdf8);
+}
+
+/* Floating animation */
+@keyframes floatLogo{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+/* Mobile View */
+@media (max-width: 600px){
+
+  .video-gallery{
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .video-card img{
+    height: 200px;
+  }
+
+  .social-icons{
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .social-logo{
+    width: 55px;
+    height: 55px;
+  }
+
+  header h1{
+    font-size: 1.8rem;
+  }
+
+  header p{
+    font-size: 0.9rem;
+  }
+
+}
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 900px){
+
+  section{
+    padding:40px 15px;
+  }
+
+  header{
+    padding:30px 15px;
+  }
+
+  header h1{
+    font-size:2rem;
+  }
+
+  header p{
+    font-size:0.95rem;
+  }
+
+  h2{
+    font-size:1.6rem;
+  }
+
+  /* Services Grid */
+  .services{
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+  }
+
+  .card{
+    padding:18px;
+    font-size:0.9rem;
+  }
+
+  /* Portfolio / Poster / Flex / Video */
+  .portfolio,
+  .poster-gallery,
+  .video-gallery,
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    padding:20px;
+  }
+
+  img{
+    width:100%;
+    height:auto;
+  }
+
+  /* Social icons */
+  .social-icons{
+    gap:20px;
+  }
+
+  .social-logo{
+    width:55px;
+    height:55px;
+  }
+}
+
+
+/* ========== SMALL MOBILE (Phones) ========== */
+@media (max-width: 500px){
+
+  header h1{
+    font-size:1.6rem;
+  }
+
+  header p{
+    font-size:0.85rem;
+  }
+
+  h2{
+    font-size:1.4rem;
+  }
+
+  /* Single column layout */
+  .services,
+  .portfolio,
+  .poster-gallery,
+  .video-gallery,
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:15px;
+  }
+
+  /* Buttons / Links touch friendly */
+  a{
+    padding:10px;
+  }
+
+  /* Floating logos (index) smaller */
+  .logo{
+    width:50px;
+    opacity:0.15;
+  }
+
+  /* Price cards */
+  .price-grid{
+    grid-template-columns:1fr;
+  }
+
+  .price-card{
+    padding:12px;
+    font-size:0.9rem;
+  }
+
+  /* Social icons center */
+  .social-icons{
+    justify-content:center;
+  }
+
+}
